@@ -1,7 +1,7 @@
 {
-	"name": "MDShortcuts",
+	"name": "mdsc",
 	"description": "Markdown shortcuts",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "Fahad",
 	"engines": {
 		"vscode": "^0.10.1"
@@ -16,6 +16,7 @@
         "onCommand:md.h1",
         "onCommand:md.h2",
         "onCommand:md.h3",
+        "onCommand:md.h4",
         "onCommand:md.hyperlink",
         "onCommand:md.image",
         "onCommand:md.codeblocks"
@@ -49,6 +50,11 @@
                 "command": "md.h3",
                 "key": "Ctrl+Alt+3",
                 "mac": "cmd+opt+3",
+                "when": "editorTextFocus"
+            }, {
+                "command": "md.h4",
+                "key": "Ctrl+Alt+4",
+                "mac": "cmd+opt+4",
                 "when": "editorTextFocus"
             }, {
                 "command": "md.hyperlink",

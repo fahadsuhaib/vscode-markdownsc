@@ -61,6 +61,10 @@ export function activate(context: vscode.ExtensionContext) {
         te.replace(t.selection, MDShortcuts.heading(t.document.getText(t.selection), 3));
     });
 
+    var h4 = vscode.commands.registerTextEditorCommand('md.h4', (t, te) => {
+        te.replace(t.selection, MDShortcuts.heading(t.document.getText(t.selection), 4));
+    });
+    
     var hyperlink = vscode.commands.registerTextEditorCommand('md.hyperlink', () => {
         let t = vscode.window.activeTextEditor;
         vscode.window.showInputBox({
@@ -91,7 +95,7 @@ export function activate(context: vscode.ExtensionContext) {
         te.replace(t.selection, MDShortcuts.codeblocks(t.document.getText(t.selection)));
     });
 
-    [bold, italics, h1, h2, h3, hyperlink, image, codeblocks].forEach(t => {
+    [bold, italics, h1, h2, h3, h4, hyperlink, image, codeblocks].forEach(t => {
         context.subscriptions.push(t);
     });
 }
