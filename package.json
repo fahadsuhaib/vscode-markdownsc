@@ -1,0 +1,79 @@
+{
+	"name": "MDShortcuts",
+	"description": "Markdown shortcuts",
+	"version": "0.0.1",
+	"publisher": "Fahad",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Languages"
+	],
+	"activationEvents": [
+        "onLanguage:markdown",
+		"onCommand:md.bold",
+        "onCommand:md.italics",
+        "onCommand:md.h1",
+        "onCommand:md.h2",
+        "onCommand:md.h3",
+        "onCommand:md.hyperlink",
+        "onCommand:md.image",
+        "onCommand:md.codeblocks"
+	],
+    "extensionDependencies": [
+      "vscode.markdown"  
+    ],
+	"main": "./out/src/extension",
+	"contributes": {
+        "keybindings": [ {
+				"command": "md.bold",
+				"key": "Ctrl+b",
+                "mac": "cmd+b",
+                "when": "editorTextFocus"
+			}, {
+                "command": "md.italics",
+                "key": "Ctrl+i",
+                "mac": "cmd+i",
+                "when": "editorTextFocus"
+            }, {
+                "command": "md.h1",
+                "key": "Ctrl+Alt+1",
+                "mac": "cmd+opt+1",
+                "when": "editorTextFocus"
+            }, {
+                "command": "md.h2",
+                "key": "Ctrl+Alt+2",
+                "mac": "cmd+opt+2",
+                "when": "editorTextFocus"
+            }, {
+                "command": "md.h3",
+                "key": "Ctrl+Alt+3",
+                "mac": "cmd+opt+3",
+                "when": "editorTextFocus"
+            }, {
+                "command": "md.hyperlink",
+                "key": "Ctrl+Shift+k",
+                "mac": "cmd+shift+k",
+                "when": "editorTextFocus"
+            }, {
+                "command": "md.image",
+                "key": "Ctrl+Shift+i",
+                "mac": "cmd+shift+i",
+                "when": "editorTextFocus"
+            }, {
+                "command": "md.codeblocks",
+                "key": "Ctrl+Shift+`",
+                "mac": "cmd+shift+`",
+                "when": "editorTextFocus"
+            }
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+	},
+	"devDependencies": {
+		"typescript": "^1.6.2",
+		"vscode": "0.10.x"
+	}
+}
